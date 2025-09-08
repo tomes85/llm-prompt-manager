@@ -39,7 +39,8 @@ def save_prompts(file: str, list_of_prompts: List[Prompt]) -> None:
 def add_new_prompt() -> None:
     prompts = load_prompts(PROMPT_JSON_FILE)
     prompt_name = input("Enter the name of the prompt: ")
-    prompt_prompt = input("Enter the prompt: ")
+    input("Now copy the prompt into the clipboard and hit ENTER after doing so. The prompt will be added.")
+    prompt_prompt = pyperclip.paste()
 
     prompt = Prompt(name=prompt_name, prompt=prompt_prompt)
     prompts.append(prompt)
